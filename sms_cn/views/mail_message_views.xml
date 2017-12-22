@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sms_message_view_form" model="ir.ui.view">
+        <field name="name">sms.message.view.form</field>
+        <field name="model">mail.message</field>
+        <field name="inherit_id" ref="mail.view_message_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="SMS" attrs="{'invisible':[('message_type', '!=', 'sms')]}">
+                    <group>
+                        <group>
+                            <field name="sms_template_id"/>
+                            <field name="sms_account_id"/>
+                            <field name="sms_status"/>
+                            <field name="sms_state_msg"/>
+                        </group>
+                        <group attrs="{'invisible':[('verify_code', '=', 0)]}">
+                            <field name="validity"/>
+                            <field name="verify_code"/>
+                            <field name="code_used"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

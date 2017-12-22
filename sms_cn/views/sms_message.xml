@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sms_message_view_tree" model="ir.ui.view">
+            <field name="name">sms.message.view.tree</field>
+            <field name="model">sms.message</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="subject"/>
+                    <field name="date"/>
+                    <field name="sms_state"/>
+                    <field name="model" string="Model"/>
+                    <field name="record_name" string="Record Name"/>
+                    <field name="author_id"/>
+                    <field name="body"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sms_message_view_form" model="ir.ui.view">
+            <field name="name">sms.message.view.form</field>
+            <field name="model">sms.message</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="subject"/>
+                                <field name="date"/>
+                                <field name="author_id"/>
+                                <field name="numbers"/>
+                            </group>
+                            <group>
+                                <field name="model" string="Model"/>
+                                <field name="record_name" string="Record Name"/>
+                                <field name="sms_state"/>
+                                <field name="sms_state_msg"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Body">
+                                <group>
+                                    <field name="body" nolabel="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sms_message_action" model="ir.actions.act_window">
+            <field name="name">SMS Message</field>
+            <field name="res_model">sms.message</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="sms_message_menu" name="SMS Message" action="sms_message_action" sequence="40"/>
+    
+    </data>
+</odoo>

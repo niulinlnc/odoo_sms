@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="iap_account_aliyun_sms" model="iap.account">
+            <field name="service_name">阿里云短信</field>
+            <field name="sms_gateway">aliyun</field>
+            <field name="key_id"></field>
+            <field name="key_secret"></field>
+            <field name="notes">Step1：注册阿里云账号 -> Step2：进行实名认证 -> Step3：开通短信功能 -> Step4：申请短信签名 -> Step5：申请短信模版 -> Step6：调用接口正式使用</field>
+        </record>
+        <record id="sms_template_notice_demo" model="sms.template">
+            <field name="name">短信模版样例 - 通知</field>
+            <field name="account_id" ref="iap_account_aliyun_sms"/>
+            <field name="template_type">notice</field>
+            <field name="variables_only">True</field>
+            <field name="template_signature">鲜丰食配</field>
+            <field name="template_code">SMS_91805077</field>
+            <field name="variables_mapping">partner,time,hours</field>
+            <field name="numbers">${object.mobile}</field>
+            <field name="content_body">尊敬的${object.name}：您今天还没下单噢，商城将在${object.create_date}截止接收订单，距离截止时间还有${object.id}分钟，请抓紧噢！</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="priority">1</field>
+            <field name="active">True</field>
+        </record>
+        <record id="sms_template_code_demo" model="sms.template">
+            <field name="name">短信模版样例 - 验证码</field>
+            <field name="account_id" ref="iap_account_aliyun_sms"/>
+            <field name="template_type">code</field>
+            <field name="variables_only">True</field>
+            <field name="template_signature">鲜丰食配</field>
+            <field name="template_code">SMS_91805077</field>
+            <field name="variables_mapping">code,validity</field>
+            <field name="numbers">${object.mobile}</field>
+            <field name="content_body">您账户本次操作的验证码为${code}，验证码${validity}分钟内有效。请勿将验证码告知他人，若非您本人操作可不必理会。</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="priority">2</field>
+            <field name="active">True</field>
+        </record>
+        <record id="sms_template_marketing_demo" model="sms.template">
+            <field name="name">短信模版样例 - 营销</field>
+            <field name="account_id" ref="iap_account_aliyun_sms"/>
+            <field name="template_type">marketing</field>
+            <field name="variables_only">True</field>
+            <field name="template_signature">鲜丰食配</field>
+            <field name="template_code">SMS_91805077</field>
+            <field name="variables_mapping">partner</field>
+            <field name="numbers">${object.mobile}</field>
+            <field name="content_body">您好：${object.name}，夏日炎炎，喝瓶可乐降降暑。退订请回复TD</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="priority">3</field>
+            <field name="active">True</field>
+        </record>
+    </data>
+</odoo>

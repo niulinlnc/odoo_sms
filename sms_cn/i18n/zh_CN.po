@@ -1,0 +1,732 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sms_cn
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-22 14:39+0000\n"
+"PO-Revision-Date: 2017-12-22 14:39+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "${object.partner_id.lang}"
+msgstr "${object.partner_id.lang}"
+
+#. module: sms_cn
+#: code:addons/sms_cn/models/sms_template.py:318
+#, python-format
+msgid "%s (%s)"
+msgstr "%s (%s)"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "<b>Note: </b>The SMS account's gateway you choose is only receive variables, Please entry the mapping variables associated with the expression in sequence, And make sure the variable name is correct."
+msgstr "<b>说明：</b>你所选账户的网关只接收模版的变量值，请按顺序输入与模版表达式关联的变量映射，并确保输入的变量名称与网关所申请的变量名称一致。"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "<b>Note: </b>The template for verify code, Please use the specified placeholders. Verify code: ${code} , Validity: ${validity}."
+msgstr "<b>说明：</b>验证码短信请使用指定的占位符。验证码：${code} ，验证码有效期(分钟): ${validity} 。"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "<span class=\"o_stat_text\">Add</span>\n"
+"                                    <span class=\"o_stat_text\">Context Action</span>"
+msgstr "<span class=\"o_stat_text\">添加</span>\n"
+"<span class=\"o_stat_text\">上下文动作</span>"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "<span class=\"o_stat_text\">Remove</span>\n"
+"                                    <span class=\"o_stat_text\">Context Action</span>"
+msgstr "<span class=\"o_stat_text\">移除</span>\n"
+"<span class=\"o_stat_text\">上下文动作</span>"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_iap_account_key_id
+#: model:ir.ui.view,arch_db:sms_cn.iap_account_sms_template_view_form
+msgid "AccessKeyId / AccountSID / AppKey / Account"
+msgstr "AccessKeyId / AccountSID / AppKey / Account"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_iap_account_key_secret
+#: model:ir.ui.view,arch_db:sms_cn.iap_account_sms_template_view_form
+msgid "AccessKeySecret / AuthToken / AppSecret ／ APIKey"
+msgstr "AccessKeySecret / AuthToken / AppSecret ／ APIKey"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_search
+msgid "Account"
+msgstr "短信账户"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_active
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_search
+msgid "Active"
+msgstr "有效"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_user_signature
+msgid "Add Signature"
+msgstr "添加短信签名"
+
+#. module: sms_cn
+#: selection:iap.account,sms_gateway:0
+msgid "Aliyun"
+msgstr "阿里云"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_search
+msgid "Applies model"
+msgstr "应用的模型"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_model_id
+msgid "Applies to"
+msgstr "应用的模型"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_author_id
+msgid "Author"
+msgstr "作者"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_message_author_id
+msgid "Author of the message."
+msgstr "消息的作者。"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_message_view_form
+msgid "Body"
+msgstr "正文"
+
+#. module: sms_cn
+#: selection:sms.message,sms_state:0
+msgid "Cancelled"
+msgstr "已取消"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_code_used
+msgid "Code Used"
+msgstr "验证码已使用"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "Comma-separated multiple variables"
+msgstr "多个变量使用逗号分隔符"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_numbers
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "Comma-separated recipient mobile (placeholders may be used here)"
+msgstr "接收者号码，多个号码使用逗号分隔符 (这里可以使用表达式占位符)"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "Content"
+msgstr "内容"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_content_body
+msgid "Content body"
+msgstr "模版内容"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_content_preview
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "Content preview"
+msgstr "内容预览"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_body
+msgid "Contents"
+msgstr "内容"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "Copy and paste the generated expressions into the contents of the template."
+msgstr "复制生成的表达式并粘贴在模版内容设定的位置上。"
+
+#. module: sms_cn
+#: model:ir.actions.act_window,help:sms_cn.sms_template_action
+msgid "Create a template for SMS"
+msgstr "创建一个短信模版"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_create_uid
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_create_date
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_date
+msgid "Date"
+msgstr "日期"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_null_value
+msgid "Default Value"
+msgstr "占位符默认值"
+
+#. module: sms_cn
+#: selection:sms.message,sms_state:0
+msgid "Delivery Failed"
+msgstr "转发失败"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_display_name
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "Display an option on related documents to open a composition wizard with this template"
+msgstr "显示一个关联单据的选项 ，用该模板打开撰写向导"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "Dynamic Placeholder Generator"
+msgstr "占位符生成器"
+
+#. module: sms_cn
+#: code:addons/sms_cn/models/sms_template.py:270
+#, python-format
+msgid "Failed to render template %r using values %r"
+msgstr "%r 模版渲染失败：值（%r）"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_model_object_field
+msgid "Field"
+msgstr "字段"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_copyvalue
+msgid "Final placeholder expression, to be copy-pasted in the desired template field."
+msgstr "已生成的占位符表达式，可以复制并粘贴到模版内容上"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "Generatored Placeholder :"
+msgstr "已生成的占位符："
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_search
+msgid "Group By"
+msgstr "分组"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_id
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_id
+msgid "ID"
+msgstr "ID"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_user_signature
+msgid "If checked, the sms account's signature will be appended to the text version of the message"
+msgstr "If checked, the sms account's signature will be appended to the text version of the message"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_message_scheduled_date
+msgid "If set, the queue manager will send the sms after the date. If not set, the sms will be send as soon as possible."
+msgstr "If set, the queue manager will send the sms after the date. If not set, the sms will be send as soon as possible."
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_active
+msgid "If unchecked, it will allow you to hide the product without removing it."
+msgstr "If unchecked, it will allow you to hide the product without removing it."
+
+#. module: sms_cn
+#: selection:iap.account,sms_gateway:0
+msgid "In-App purchases"
+msgstr "应用内购买"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_search
+msgid "Inactive"
+msgstr "无效"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_iap_account_key_id
+msgid "KeyId"
+msgstr "KeyId"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_iap_account_key_secret
+msgid "KeySecret"
+msgstr "KeySecret"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_lang
+msgid "Language"
+msgstr "语言"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message___last_update
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_write_uid
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_write_date
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_iap_account_last_check_date
+msgid "Last check date"
+msgstr "检查日期"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_iap_account_last_check_response
+msgid "Last check response"
+msgstr "响应信息"
+
+#. module: sms_cn
+#: selection:sms.template,template_type:0
+msgid "Marketing"
+msgstr "营销短信"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_record_name
+msgid "Message Record Name"
+msgstr "消息记录名称"
+
+#. module: sms_cn
+#: code:addons/sms_cn/models/sms_template.py:249
+#, python-format
+msgid "Message content can not be empty"
+msgstr "短信内容不能为空"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_message_message_id
+msgid "Message unique identifier"
+msgstr "消息唯一标识符"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_message_id
+msgid "Message-Id"
+msgstr "消息唯一Id"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_message_view_form
+#: model:ir.ui.view,arch_db:sms_cn.sms_message_view_tree
+msgid "Model"
+msgstr "模型"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_message_record_name
+msgid "Name get of the related document."
+msgstr "名称，获得相关单据"
+
+#. module: sms_cn
+#: selection:sms.template,template_type:0
+msgid "Notice"
+msgstr "通知短信"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_lang
+msgid "Optional translation language (ISO code) to select when sending out a sms. If not set, the english version will be used. This should usually be a placeholder expression that provides the appropriate language, e.g. ${object.partner_id.lang}."
+msgstr "Optional translation language (ISO code) to select when sending out a sms. If not set, the english version will be used. This should usually be a placeholder expression that provides the appropriate language, e.g. ${object.partner_id.lang}."
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_null_value
+msgid "Optional value to use if the target field is empty"
+msgstr "当占位符中目标字段的值为空时，默认用来替代的值"
+
+#. module: sms_cn
+#: selection:sms.message,sms_state:0
+msgid "Outgoing"
+msgstr "等待转发"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_pass_test
+msgid "Pass-test"
+msgstr "测试通过"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_copyvalue
+msgid "Placeholder Expression"
+msgstr "占位符表达式"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_content_body
+msgid "Plain text version of the message (placeholders may be used here)"
+msgstr "模版内容(这里可以使用表达式占位符)"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_priority
+msgid "Priority"
+msgstr "优先级"
+
+#. module: sms_cn
+#: code:addons/sms_cn/models/sms_template.py:130
+#: sql_constraint:sms.template:0
+#, python-format
+msgid "Priority must be greater than 0 !"
+msgstr "优先级必须大于0！"
+
+#. module: sms_cn
+#: code:addons/sms_cn/models/sms_template.py:129
+#: sql_constraint:sms.template:0
+#, python-format
+msgid "Priority repeat !"
+msgstr "优先级重叠！"
+
+#. module: sms_cn
+#: selection:sms.message,sms_state:0
+msgid "Received"
+msgstr "已接收"
+
+#. module: sms_cn
+#: code:addons/sms_cn/wizard/send_sms.py:28
+#, python-format
+msgid "Record ('%s') sms message delivery failed : %s"
+msgstr "记录('%s')发送短信失败 : %s"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_message_view_form
+#: model:ir.ui.view,arch_db:sms_cn.sms_message_view_tree
+msgid "Record Name"
+msgstr "记录名称"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_res_id
+msgid "Related Document ID"
+msgstr "相关单据ID"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_model
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_model
+msgid "Related Document Model"
+msgstr "相关的单据模型"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.iap_account_sms_template_view_form
+msgid "Remark :"
+msgstr "备注："
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_iap_account_notes
+msgid "Remarks"
+msgstr "备注"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "Remove the contextual action to use this template on related documents"
+msgstr "移除上下文动作，使用相关单据的模板。"
+
+#. module: sms_cn
+#: code:addons/sms_cn/models/sms_template.py:188
+#, python-format
+msgid "Render error: Model no record for render !"
+msgstr "渲染错误：模型没有可供渲染的记录！"
+
+#. module: sms_cn
+#: code:addons/sms_cn/models/sms_template.py:186
+#, python-format
+msgid "Render error: The body contains an invalid expression !"
+msgstr "渲染错误：文本包含无效的表达式！"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_sms_account_id
+msgid "SMS Account"
+msgstr "短信账户"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_iap_account_sms_gateway
+msgid "SMS Gateway"
+msgstr "短信网关"
+
+#. module: sms_cn
+#: model:ir.actions.act_window,name:sms_cn.sms_message_action
+#: model:ir.ui.menu,name:sms_cn.sms_message_menu
+msgid "SMS Message"
+msgstr "短信消息"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.iap_account_sms_template_view_form
+msgid "SMS Settings"
+msgstr "短信配置"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_sms_template_id
+msgid "SMS Template"
+msgstr "短信模版"
+
+#. module: sms_cn
+#: model:ir.actions.act_window,name:sms_cn.sms_template_action
+#: model:ir.ui.menu,name:sms_cn.sms_template_menu
+msgid "SMS Templates"
+msgstr "短信模版"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_account_id
+msgid "SMS account"
+msgstr "短信账户"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_template_code
+msgid "SMS code"
+msgstr "模版ID"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_template_signature
+msgid "SMS signature"
+msgstr "模版签名"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_send_sms_template_id
+msgid "SMS template"
+msgstr "短信模版"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_send_sms_sand_mode
+msgid "Sand Mode"
+msgstr "发送模式"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_scheduled_date
+msgid "Scheduled Send Date"
+msgstr "安排的发送日期"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_model_object_field
+msgid "Select target field from the related document model.\n"
+"If it is a relationship field you will be able to select a target field at the destination of the relationship."
+msgstr "从相关单据模型中选择目标字段。\n"
+"如果这是个关系型字段，你可以选择关系型字段的目标字段。"
+
+#. module: sms_cn
+#: code:addons/sms_cn/models/sms_template.py:345
+#, python-format
+msgid "Send SMS (%s)"
+msgstr "发送短信(%s)"
+
+#. module: sms_cn
+#: selection:sms.message,sms_state:0
+msgid "Sent"
+msgstr "转发成功"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_ref_ir_value
+msgid "Sidebar Button"
+msgstr "工具栏按钮"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_ref_ir_act_window
+msgid "Sidebar action"
+msgstr "工具栏动作"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_ref_ir_act_window
+msgid "Sidebar action to make this template available on records of the related document model"
+msgstr "用于在相关单据上调用此模板的边栏按钮"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_ref_ir_value
+msgid "Sidebar button to open the sidebar action"
+msgstr "用于打开边栏动作的边栏按钮"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_search
+msgid "Signature"
+msgstr "模版签名"
+
+#. module: sms_cn
+#: model:ir.model,name:sms_cn.model_sms_template
+msgid "Sms Templates"
+msgstr "短信模版"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_sms_state
+msgid "Status"
+msgstr "状态"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_sms_state_msg
+msgid "Status Massage"
+msgstr "状态信息"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_sub_model_object_field
+msgid "Sub-field"
+msgstr "子字段"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_sub_object
+msgid "Sub-model"
+msgstr "子模型"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_subject
+msgid "Subject"
+msgstr "主题"
+
+#. module: sms_cn
+#: selection:sms.send_sms,sand_mode:0
+msgid "Template"
+msgstr "短信模版"
+
+#. module: sms_cn
+#: code:addons/sms_cn/wizard/send_sms.py:53
+#, python-format
+msgid "Template Render error: The body contains an invalid expression !"
+msgstr "短信模版渲染错误：文本包含无效的表达式！"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "Template Test"
+msgstr "模版调试"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "Template code approved by service providers"
+msgstr "已通过服务提供商审核的模版ID"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_name
+msgid "Template name"
+msgstr "模版名称"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_send_sms_template_preview
+msgid "Template preview"
+msgstr "短信模版预览"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "Template signature approved by service providers"
+msgstr "已通过服务提供商审核的模版签名"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_template_type
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_search
+msgid "Template type"
+msgstr "模版类型"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.sms_template_view_form
+msgid "Templates"
+msgstr "模板"
+
+#. module: sms_cn
+#: model:ir.ui.view,arch_db:sms_cn.iap_account_sms_template_view_form
+msgid "Test Gateway Connection"
+msgstr "测试网关连接"
+
+#. module: sms_cn
+#: selection:sms.send_sms,sand_mode:0
+msgid "Text"
+msgstr "短信文本"
+
+#. module: sms_cn
+#: code:addons/sms_cn/models/sms_template.py:197
+#, python-format
+msgid "The Related Document Model cannot found records. Create a record and try again."
+msgstr "模版关联的模型没有可供测试的记录，请创建一条记录并重新测试。"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_model_id
+msgid "The type of document this template can be used with"
+msgstr "The type of document this template can be used with"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_numbers
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_numbers
+msgid "To (Number)"
+msgstr "目标号码"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_validity
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_validity
+msgid "Validity (Mins)"
+msgstr "验证码有效期(分钟)"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_variables_mapping
+msgid "Variables in template by service providers, Comma-separated multiple variables"
+msgstr "已通过服务提供商审核的短信模版变量, 多个变量使用逗号分隔符"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_variables_mapping
+msgid "Variables mapping"
+msgstr "变量映射"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_variables_only
+msgid "Variables only"
+msgstr "仅变量"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_message_verify_code
+msgid "Verify Code"
+msgstr "短信验证码"
+
+#. module: sms_cn
+#: selection:sms.template,template_type:0
+msgid "Verify code"
+msgstr "短信验证码"
+
+#. module: sms_cn
+#: model:ir.model.fields,field_description:sms_cn.field_sms_template_verify_digits
+msgid "Verify digits"
+msgstr "验证码位数"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_sub_model_object_field
+msgid "When a relationship field is selected as first field, this field lets you select the target field within the destination document model (sub-model)."
+msgstr "如果首先选择了一个关系型字段，这个字段可用于选择目标单据模型的目标字段。"
+
+#. module: sms_cn
+#: model:ir.model.fields,help:sms_cn.field_sms_template_sub_object
+msgid "When a relationship field is selected as first field, this field shows the document model the relationship goes to."
+msgstr "如果关系型字段被选为第一个字段，这个字段显示这个关系指向的单据模型。"
+
+#. module: sms_cn
+#: model:ir.model,name:sms_cn.model_iap_account
+msgid "iap.account"
+msgstr "iap.account"
+
+#. module: sms_cn
+#: code:addons/sms_cn/models/iap_account.py:24
+#, python-format
+msgid "service name (%s) not found , You need to create an IAP account with this service name."
+msgstr "没有找到服务名称为(%s)的IAP账户，你需要以该名称创建一个IAP账户。"
+
+#. module: sms_cn
+#: model:ir.model,name:sms_cn.model_sms_api
+msgid "sms.api"
+msgstr "sms.api"
+
+#. module: sms_cn
+#: model:ir.model,name:sms_cn.model_sms_message
+msgid "sms.message"
+msgstr "sms.message"
+
+#. module: sms_cn
+#: model:ir.model,name:sms_cn.model_sms_send_sms
+msgid "sms.send_sms"
+msgstr "sms.send_sms"
+

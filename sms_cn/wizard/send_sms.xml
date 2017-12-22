@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="send_sms_template_view_form" model="ir.ui.view">
+        <field name="name">send.sms.template.view.form</field>
+        <field name="model">sms.send_sms</field>
+        <field name="inherit_id" ref="sms.send_sms_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='recipients']" position="after">
+                <field name="sand_mode" invisible="1"/>
+                <field name="template_id" attrs="{'required':[('sand_mode', '=', 'template')]}"/>
+                <field name="template_preview" attrs="{'invisible':[('template_id', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='message']" position="replace">
+                <field name="message" attrs="{'invisible':[('sand_mode', '=', 'template')], 'required':[('sand_mode', '=', 'text')]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

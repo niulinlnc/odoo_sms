@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>     
+        <record id="sms_template_view_form" model="ir.ui.view">
+            <field name="name">sms.template.view.form</field>
+            <field name="model">sms.template</field>
+            <field name="arch" type="xml">
+                <form string="Templates">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <field name="pass_test" invisible="1"/>
+                            <field name="ref_ir_act_window" invisible="1"/>
+                            <button class="oe_stat_button" name="create_action" type="object"
+                                    attrs="{'invisible':['|',('pass_test','=',False),('ref_ir_act_window','!=',False)]}" icon="fa-plus"
+                                    help="Display an option on related documents to open a composition wizard with this template">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_text">Add</span>
+                                    <span class="o_stat_text">Context Action</span>
+                                </div>
+                            </button>
+                            <button name="unlink_action" type="object" 
+                                    class="oe_stat_button" icon="fa-minus"
+                                    attrs="{'invisible':['|',('pass_test','=',False),('ref_ir_act_window','=',False)]}"
+                                    help="Remove the contextual action to use this template on related documents" widget="statinfo">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_text">Remove</span>
+                                    <span class="o_stat_text">Context Action</span>
+                                </div>
+                            </button>
+                            <button type="object"
+                                name="send_template_test" string="Template Test"
+                                class="oe_stat_button" icon="fa-television">
+                            </button>
+                            <button name="toggle_active" type="object"
+                                    class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button"
+                                    options='{"terminology": "archive"}'/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/><h1><field name="name" required="1"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="model_id" required="1" options="{'no_create': True}"/>
+                                <field name="template_type"/>
+                                <field name="variables_only" invisible="1"/>
+                                <field name="account_id" options="{'no_create': True}"/>
+                                <field name="template_signature" placeholder="Template signature approved by service providers"/>
+                                <field name="template_code" placeholder="Template code approved by service providers"/>
+                            </group>
+                            <group>
+                                <field name="priority"/>
+                                <field name="numbers" placeholder="Comma-separated recipient mobile (placeholders may be used here)"/>
+                                <field name="lang" placeholder="${object.partner_id.lang}"/>
+                                <field name="variables_mapping" placeholder="Comma-separated multiple variables" attrs="{'invisible':[('variables_only', '=', False)]}"/>
+                                <field name="verify_digits" attrs="{'invisible':[('template_type', '!=', 'code')]}"/>
+                                <field name="validity" attrs="{'invisible':[('template_type', '!=', 'code')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <div name="preview">
+                                <label for="content_preview" string="Content preview"/>
+                                <field name="content_preview"/>
+                            </div>
+                        </group>
+                            <p attrs="{'invisible':[('variables_only', '=', False)]}">
+                                <b>Note: </b>The SMS account's gateway you choose is only receive variables, Please entry the mapping variables associated with the expression in sequence, And make sure the variable name is correct.
+                            </p>
+                        <notebook>
+                            <page name="content" string="Content">
+                                <group>
+                                    <field name="content_body" nolabel="1"/>
+                                </group>
+                                <p attrs="{'invisible':[('template_type', '!=', 'code')]}">
+                                    <b>Note: </b>The template for verify code, Please use the specified placeholders. Verify code: ${code} , Validity: ${validity}.
+                                </p>
+                            </page>
+                            <page string="Dynamic Placeholder Generator">
+                                <group>
+                                    <field name="model_object_field" domain="[('model_id','=',model_id),('ttype','!=','one2many'),('ttype','!=','many2many')]"/>
+                                    <field name="sub_object" readonly="1"/>
+                                    <field name="sub_model_object_field" domain="[('model_id','=',sub_object),('ttype','!=','one2many'),('ttype','!=','many2many')]" attrs="{'readonly':[('sub_object','=',False)],'required':[('sub_object','!=',False)]}"/>
+                                    <field name="null_value"/>
+                                    <field name="copyvalue" string="Generatored Placeholder :" placeholder="Copy and paste the generated expressions into the contents of the template."/>
+                                </group>
+                                <group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sms_template_view_tree" model="ir.ui.view">
+            <field name="name">sms.template.view.tree</field>
+            <field name="model">sms.template</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="model_id"/>
+                    <field name="priority"/>
+                    <field name="template_type"/>
+                    <field name="account_id"/>
+                    <field name="content_body"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sms_template_view_search" model="ir.ui.view">
+            <field name="name">sms.template.view.search</field>
+            <field name="model">sms.template</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="account_id"/>
+                    <field name="template_code"/>
+                    <field name="template_signature"/>
+                    <field name="model_id"/>
+                    <filter string="Active" name="active_template" domain="[('active', '=', True)]"/>
+                    <filter string="Inactive" name="inactive_template" domain="[('active', '=', False)]"/>
+                    <newline/>
+                    <group expand="0" string="Group By">
+                        <filter string="Account" domain="[]" context="{'group_by':'account_id'}"/>
+                        <filter string="Applies model" domain="[]" context="{'group_by':'model_id'}"/>
+                        <filter string="Template type" domain="[]" context="{'group_by':'template_type'}"/>
+                        <filter string="Signature" domain="[]" context="{'group_by':'template_signature'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="sms_template_action" model="ir.actions.act_window">
+            <field name="name">SMS Templates</field>
+            <field name="res_model">sms.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create a template for SMS
+                </p>
+            </field>
+        </record>
+      
+        <menuitem id="sms_template_menu" name="SMS Templates" action="sms_template_action" sequence="30"/>
+        
+    </data>
+</odoo>

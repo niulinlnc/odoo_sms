@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="iap_account_sms_template_view_form" model="ir.ui.view">
+        <field name="name">iap.account.sms.template.form</field>
+        <field name="model">iap.account</field>
+        <field name="inherit_id" ref="iap.iap_account_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <notebook>
+                    <page id="sms" string="SMS Settings">
+                        <group>
+                            <group>
+                                <field name="sms_gateway"/>
+                                <field name="key_id" placeholder="AccessKeyId / AccountSID / AppKey / Account"/>
+                                <field name="key_secret" placeholder="AccessKeySecret / AuthToken / AppSecret ／ APIKey"/>
+                                <field name="last_check_date"/>
+                                <field name="last_check_response"/>
+                                <button name="check_sms_connection" type="object" string="Test Gateway Connection" icon="fa-television"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="notes" nolabel="1" placeholder="Remark :"/>
+                        </group>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+</odoo>
