@@ -43,10 +43,12 @@ class SmsApi(models.AbstractModel):
 
         def _get_response(account, payload=None):
             url = 'http://dysmsapi.aliyuncs.com'
+            key_id = str(account.key_id)
+            key_secret = str(account.key_secret)
             params = {
                 'Format': 'JSON',
                 'Version': '2017-05-25',
-                'AccessKeyId': account.key_id,
+                'AccessKeyId': key_id,
                 'SignatureMethod': 'HMAC-SHA1',
                 'SignatureVersion': '1.0',
                 'SignatureNonce': str(uuid.uuid4()),
@@ -64,7 +66,7 @@ class SmsApi(models.AbstractModel):
             # 3.待签名字符串：HTTPMethod + “&” + (“/”) + ”&” + (query_string)除去第一个'&'字符
             to_sign = 'GET&%2F&' + _specia_encode(query_string[1:])
             # 4.签名 
-            signature = _get_signature(to_sign, account.key_secret + '&')
+            signature = _get_signature(to_sign, key_secret + '&')
             # 5.签名做特殊编码
             signature_string = _specia_encode(signature)
             # 6.增加签名结果到请求参数中，发送请求。

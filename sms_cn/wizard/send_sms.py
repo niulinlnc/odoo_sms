@@ -49,4 +49,4 @@ class SendSMS(models.TransientModel):
     @api.onchange('template_id')
     def _onchange_template_id(self):
         if self.template_id:
-            self.message == self.template_preview
+            self.message = self.template_preview

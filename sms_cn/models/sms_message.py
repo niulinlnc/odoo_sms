@@ -58,6 +58,13 @@ class SmsMessage(models.Model):
             return False
         return self.env[model].sudo().browse(res_id).name_get()[0][1]
 
+    @api.model
+    def create(self, values):
+        if 'record_name' not in values and 'default_record_name' not in self.env.context:
+            values['record_name'] = self._get_record_name(values)
+        message = super(SmsMessage, self).create(values)
+        return message
+
     @api.multi
     def check_code_validity(self, cur_time):
         """ 查询验证码有效状态，有效返回 True, 过期返回 False / 2017-12-22 Dong """
