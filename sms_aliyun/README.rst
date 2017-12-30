@@ -11,6 +11,7 @@ Usage
 =====
 
 * Buy `Aliyun SMS Package <https://common-buy.aliyun.com/?&commodityCode=newdysmsbag#/buy>`_
+* `Aliyun SMS How to Use <https://help.aliyun.com/document_detail/59210.html>`_
 * Install this module
 * Go to Settings > Technical > Iap Account configuration and select Aliyun gateway.
 * Set your KeyId, KeySecret and click the 'Check sms connection' button to test your account.

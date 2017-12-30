@@ -10,7 +10,7 @@ This module gives a framework for SMS text messaging
 
 The service is provided by the In App Purchase Odoo platform.
 """,
-    'depends': ['base', 'iap', 'mail'],
+    'depends': ['base', 'iap_v10', 'mail'],
     'data': [
         'wizard/send_sms_views.xml',
         'views/res_partner_views.xml',

@@ -22,10 +22,11 @@ class SendSMS(models.TransientModel):
             active_model = self.env.context.get('active_model')
             model = self.env[active_model]
             records = self._get_records(model)
-            for record in records:
-                sent, msg = self.env['sms.template'].send_sms_template(self.template_id, record, numbers)
-                if not sent:
-                    raise ValidationError(_("Record ('%s') sms message delivery failed : %s") % (record.name, msg))
+            # TODO 修复模版渲染逻辑，启用迭代记录的方式发送短信，避免与多个号码重叠发送
+            # for record in records:
+            sent, msg = self.env['sms.template'].send_sms_template(self.template_id, record, numbers)
+            if not sent:
+                raise ValidationError(_("Record ('%s') sms message delivery failed : %s") % (record.name, msg))
             return True
         return super(SendSMS, self).action_send_sms()
 

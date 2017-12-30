@@ -201,7 +201,7 @@ class SmsTemplate(models.Model):
         return state, msg
 
     @api.model
-    def send_sms_template(self, my_template, record, numbers=None):
+    def send_sms_template(self, my_template, records, numbers=None):
         # 如果没有传numbers值，取模版的numbers 2017-12-22 Dong
         if numbers:
             my_numbers = numbers
@@ -211,7 +211,7 @@ class SmsTemplate(models.Model):
         # 渲染模版值并转换成符合网关要求的内容
         rendered_content = my_template.render_template(my_template.content_body, my_template.model_id.model, record.id)
         my_message = self._convert_message(my_template, rendered_content)
-        # 创建短信的记录
+        # 每条记录创建短信的业务日志
         vals = {
             'sms_state': 'outgoing',
             'res_id': record.id,

@@ -12,7 +12,7 @@
     'summary': """SMS base for China""",
     'description': """
     """,
-    'depends': ['sms'],
+    'depends': ['sms_v10'],
     'author': 'dong@freshoo.cn',
     'website': 'https://github.com/freshoo-dong',
     'images': ['static/description/banner.png'],

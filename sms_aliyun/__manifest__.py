@@ -12,7 +12,7 @@
     'summary': """Send your SMS through Aliyun gateway""",
     'description': """
     """,
-    'depends': ['sms','sms_cn'],
+    'depends': ['sms_cn'],
     'author': 'dong@freshoo.cn',
     'website': 'https://github.com/freshoo-dong',
     'images': ['static/description/banner.png'],
