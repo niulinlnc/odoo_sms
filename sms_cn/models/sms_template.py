@@ -201,7 +201,7 @@ class SmsTemplate(models.Model):
         return state, msg
 
     @api.model
-    def send_sms_template(self, my_template, records, numbers=None):
+    def send_sms_template(self, my_template, record, numbers=None):
         # 如果没有传numbers值，取模版的numbers 2017-12-22 Dong
         if numbers:
             my_numbers = numbers

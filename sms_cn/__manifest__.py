@@ -6,7 +6,7 @@
 
 
 {
-    'name': 'SMS for China',
+    'name': 'SMS For China',
     'version': '1.0',
     'license': 'AGPL-3',
     'summary': """SMS base for China""",

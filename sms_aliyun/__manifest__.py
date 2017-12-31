@@ -6,7 +6,7 @@
 
 
 {
-    'name': 'SMS Aliyun gateway',
+    'name': 'SMS Aliyun Gateway',
     'version': '1.0',
     'license': 'AGPL-3',
     'summary': """Send your SMS through Aliyun gateway""",
